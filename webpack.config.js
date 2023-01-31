@@ -20,6 +20,9 @@ module.exports = {
     template: './public/index.html',
     filename: 'index.html',
   })],
+  resolve: {
+    extensions: ['.js', '.jsx', '.json'],
+  },
   mode: 'development',
   devServer: {
     open: true,
