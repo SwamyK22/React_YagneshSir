@@ -1,21 +1,21 @@
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 
-const bg = 'red';
-const color = '#fff';
-
-function App(props) {
-  const { title, desc } = props;
+function App({ title, desc }) {
   return (
-    <>
-      <h1 style={{
-        backgroundColor: bg,
-        color,
-      }}
-      >
-        { title }
-      </h1>
-      <h2>{ desc }</h2>
-    </>
+    <div>
+      <h1>{title}</h1>
+      <h2>{desc}</h2>
+    </div>
   );
 }
+
+App.prototype = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string,
+};
+App.defaultProps = {
+  desc: 'N/A',
+};
 export default App;
